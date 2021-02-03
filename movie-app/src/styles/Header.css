@@ -1,6 +1,19 @@
 .header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 .filter-btn {
+  height: 100%;
+  border: solid 1px white;
+  color: white;
+  background-color: black;
+  padding: 20px;
+  font-size: large;
+}
+.filter-btn:hover {
+  cursor: pointer;
+  color: black;
+  border: solid 1px black;
+  background-color: white;
 }

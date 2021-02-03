@@ -11,3 +11,15 @@ export function loadMovies() {
       );
   };
 }
+export function ascendingOrder() {
+  return (dispatch) => {
+    dispatch({ type: "LOADING" });
+    dispatch({ type: "ASCENDING_ORDER" });
+  };
+}
+export function descendingOrder() {
+  return (dispatch) => {
+    dispatch({ type: "LOADING" });
+    dispatch({ type: "DESCENDING_ORDER" });
+  };
+}
