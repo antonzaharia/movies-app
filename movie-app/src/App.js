@@ -3,6 +3,7 @@ import "./styles/App.css";
 import { connect } from "react-redux";
 
 import Header from "./components/Header";
+import Content from "./components/Content";
 import { loadMovies } from "./actions";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Content movies={this.props.movies} />
       </div>
     );
   }
@@ -20,4 +22,7 @@ class App extends Component {
 const mapDispatchToProps = (dispatch) => ({
   loadMovies: () => dispatch(loadMovies()),
 });
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);
