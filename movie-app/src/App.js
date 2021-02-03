@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./styles/App.css";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from "./components/Header";
+import { loadMovies } from "./actions";
+
+class App extends Component {
+  componentDidMount() {
+    this.props.loadMovies();
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header />
+      </div>
+    );
+  }
 }
-
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  loadMovies: () => dispatch(loadMovies()),
+});
+export default connect(null, mapDispatchToProps)(App);
