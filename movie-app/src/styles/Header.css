@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 .filter-btn {
@@ -16,4 +17,12 @@
   color: black;
   border: solid 1px black;
   background-color: white;
+}
+.buttons-wrap {
+  display: flex;
+}
+@media only screen and (max-width: 730px) {
+  .header {
+    justify-content: center;
+  }
 }

@@ -30,7 +30,7 @@ class Header extends Component {
     return (
       <div className="header">
         <h1 className="logo">MovieApp</h1>
-        <div>
+        <div className="buttons-wrap">
           <button className="filter-btn" onClick={this.toggleAscending}>
             Ascending rating order{" "}
             {this.state.ascending ? <DoneOutlineIcon /> : ""}

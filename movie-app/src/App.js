@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Header from "./components/Header";
 import Content from "./components/Content";
 import { loadMovies } from "./actions";
+import Loading from "./components/Loading";
 
 class App extends Component {
   componentDidMount() {
@@ -14,6 +15,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+
+        {this.props.loading ? <Loading /> : ""}
         <Content movies={this.props.movies} />
       </div>
     );
@@ -24,5 +27,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 const mapStateToProps = (state) => ({
   movies: state.movies,
+  loading: state.loading,
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
