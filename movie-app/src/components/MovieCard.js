@@ -1,6 +1,7 @@
 import React from "react";
 import gsap from "gsap";
 
+
 export default function MovieCard({ movie }) {
   let classValue = `${movie.id}`;
   let classTitle = `title title${classValue}`;

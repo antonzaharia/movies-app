@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./styles/App.css";
 import { connect } from "react-redux";
 
-import Header from "./components/Header";
-import Content from "./components/Content";
+import Header from "./components/Header.tsx";
+import Content from "./components/Content.tsx";
 import { loadMovies } from "./actions";
 import Loading from "./components/Loading";
 

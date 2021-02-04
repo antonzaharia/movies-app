@@ -5,13 +5,31 @@ import { loadMovies, ascendingOrder, descendingOrder } from "../actions";
 
 import DoneOutlineIcon from "@material-ui/icons/DoneOutline";
 
-class Header extends Component {
-  constructor(props) {
+interface HeaderProps {
+  loadMovies: any;
+  ascendingOrder: any;
+  descendingOrder: any;
+}
+
+interface HeaderState {
+  ascending: boolean;
+  descending: boolean;
+}
+
+
+class Header extends Component<HeaderProps, HeaderState> {
+  constructor(props: HeaderProps) {
     super(props);
     this.state = {
       ascending: false,
-      descending: false,
-    };
+      descending: false
+    }
+  }
+  componentWillMount() {
+    this.setState({
+      ascending: false,
+      descending: false
+    })
   }
   toggleAscending = () => {
     this.state.ascending
